@@ -36,7 +36,78 @@ export const BRANDS = [
   "Yonex", "Li-Ning", "Adidas", "Nike", "Puma", "Umbro", "Kalasagar", "BD Tigers", "Solidarity Squad",
 ];
 
-
+export const PARTNERS = [
+  { 
+    id: 1, 
+    name: "Nike", 
+    category: "Global Sports Apparel", 
+    tag: "Premium",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg"
+  },
+  { 
+    id: 2, 
+    name: "Adidas", 
+    category: "Official Footwear Partner", 
+    tag: "Featured",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/2/20/Adidas_Logo.svg"
+  },
+  { 
+    id: 3, 
+    name: "Puma", 
+    category: "Athletic Wear", 
+    tag: "Partner",
+    logo: "https://download.logo.wine/logo/Puma_(brand)/Puma_(brand)-Logo.wine.png"
+  },
+  { 
+    id: 4, 
+    name: "Under Armour", 
+    category: "Performance Apparel", 
+    tag: "Partner",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/4/44/Under_armour_logo.svg"
+  },
+  { 
+    id: 5, 
+    name: "Yonex", 
+    category: "Racquet Sports Partner", 
+    tag: "Premium",
+    logo: "https://i.pinimg.com/736x/19/64/d0/1964d07c9e625f0804ca7d890beacfa7.jpg"
+  },
+  { 
+    id: 6, 
+    name: "Spalding", 
+    category: "Basketball Equipment", 
+    tag: "Partner",
+    logo: "https://1000logos.net/wp-content/uploads/2020/09/Spalding-Logo.jpg"
+  },
+  { 
+    id: 7, 
+    name: "SS Ton", 
+    category: "Premium Cricket Gear", 
+    tag: "Featured",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/b/bb/Sareen_Sports_Industries_Logos%2C_2022.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original" 
+  },
+  { 
+    id: 8, 
+    name: "Kookaburra", 
+    category: "Cricket & Hockey", 
+    tag: "Featured",
+    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1DAKoQuxq8O4yx7jMldNBpOEvULG7tZuxr57uvnTRBQv8eSAKAXpv8c-V&s=10" 
+  },
+  { 
+    id: 9, 
+    name: "Li-Ning", 
+    category: "Badminton & Activewear", 
+    tag: "Premium",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/6/6b/Li-Ning-logo.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original" 
+  },
+  { 
+    id: 10, 
+    name: "SG Cricket", 
+    category: "Match Balls & Equipment", 
+    tag: "Partner",
+    logo: "https://upload.wikimedia.org/wikipedia/en/d/dd/Sanspareils_Greenlands_logo.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original" 
+  }
+];
 
 
 export const GRADES = ["Grade 1 · EW", "Grade 2 · EW", "Grade 3 · EW", "Grade 1 · MW", "Kashmir Willow", "Beginner"];

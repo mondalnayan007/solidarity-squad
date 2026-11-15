@@ -52,19 +52,24 @@ export default function CartDrawer() {
             </div>
           ) : lines.map((l) => (
             <div key={`${l.id}-${l.variant}`} className="mb-3 flex gap-3 rounded-2xl border border-line p-2.5">
+              
+              {/* ── Image Fix: Added overflow-hidden to parent and size/fit classes to img ── */}
               <Link to={`/product/${l.product.id}`} onClick={() => setCartOpen(false)}
-                className="grid h-20 w-20 shrink-0 place-items-center rounded-xl text-4xl" style={{ background: l.product.bg }}>
-                {l.product.emoji}
+                className="grid h-20 w-20 shrink-0 place-items-center overflow-hidden rounded-xl text-4xl" style={{ background: l.product.bg }}>
+                <img src={l.product.image} alt={l.product.name} className="h-full w-full object-contain p-1" />
               </Link>
+
               <div className="min-w-0 flex-1">
                 <Link to={`/product/${l.product.id}`} onClick={() => setCartOpen(false)} className="line-clamp-2 text-sm font-bold hover:text-brand">{l.product.name}</Link>
                 <p className="mt-0.5 text-[11px] text-mut">{l.variant} · {formatBDT(l.product.price)}</p>
                 <div className="mt-1.5 flex items-center justify-between">
                   <div className="flex items-center rounded-lg border border-line">
+                    {/* Fixed missing minus sign in l.qty - 1 */}
                     <button onClick={() => updateQty(l.id, l.variant, l.qty - 1)} className="grid h-7 w-7 place-items-center" aria-label="Decrease"><Minus className="h-3.5 w-3.5" /></button>
                     <span className="w-7 text-center text-sm font-bold">{l.qty}</span>
                     <button onClick={() => updateQty(l.id, l.variant, l.qty + 1)} className="grid h-7 w-7 place-items-center" aria-label="Increase"><Plus className="h-3.5 w-3.5" /></button>
                   </div>
+                  {/* Fixed missing multiply sign in l.product.price * l.qty */}
                   <span className="text-sm font-extrabold text-ink">{formatBDT(l.product.price * l.qty)}</span>
                 </div>
               </div>

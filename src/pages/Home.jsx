@@ -11,6 +11,7 @@ import FeatureBanner from "../components/FeatureBanner";
 import ShopBySport from "../components/ShopBySport";
 import FlashSaleBanner from "../components/FlashSaleBanner";
 import Testimonial from "../components/Testimonial";
+import Partners from "../components/Partners";
 
 export default function Home() {
   const [tab, setTab] = useState("best");
@@ -202,15 +203,7 @@ export default function Home() {
      <Testimonial></Testimonial>
       
 
-      {/* ═══ Payment & delivery partners ═══ */}
-      <div className="mx-auto mt-10 max-w-7xl px-4 pb-4 lg:px-8">
-        <div className="flex flex-col items-center gap-2 rounded-2xl border border-line bg-surf p-4 text-center">
-          <div className="flex items-center gap-1 text-xs font-extrabold uppercase tracking-widest text-mut"><Star className="h-4 w-4 fill-gold text-gold" /> Trusted by 25,000+ players across Bangladesh</div>
-          <div className="flex flex-wrap justify-center gap-2 text-[10px] font-bold text-ink">
-            {["SSLCommerz IPN verified", "bKash & Nagad", "Pathao · Steadfast", "COD available"].map((x) => <span key={x} className="rounded-full bg-bg px-3 py-1">{x}</span>)}
-          </div>
-        </div>
-      </div>
+      <Partners></Partners>
     </>
   );
 }

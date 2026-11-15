@@ -211,7 +211,7 @@ export default function Navbar() {
     "px-4 py-3 text-sm font-bold text-ink/90 transition-colors hover:text-brand";
 
   return (
-    <header className="no-print sticky top-0 z-50 w-full max-w-full overflow-x-clip border-b border-line/80 bg-surf/95 backdrop-blur-xl">
+    <header className="no-print sticky top-0 z-[9999] w-full max-w-full overflow-x-clip border-b border-line/80 bg-surf/95 backdrop-blur-xl">
 
       {/* Animations */}
       <style>{`
@@ -299,10 +299,8 @@ export default function Navbar() {
         </div>
       </div>
 
-
-
       {/* Main Navbar */}
-      <div className="mx-auto flex w-full max-w-7xl min-w-0 items-center gap-2 overflow-hidden px-3 py-2.5 sm:gap-3 sm:px-4 lg:gap-5 lg:px-8">
+      <div className="mx-auto flex w-full max-w-7xl min-w-0 items-center gap-2 overflow-visible px-3 py-2.5 sm:gap-3 sm:px-4 lg:gap-5 lg:px-8">
 
         {/* Logo */}
         <Link
@@ -359,7 +357,7 @@ export default function Navbar() {
 
           {/* Search Suggestions */}
           {focus && suggestions.length > 0 && (
-            <div className="absolute left-0 right-0 top-full z-50 mt-2 overflow-hidden rounded-2xl border border-line bg-surf shadow-2xl cascade-dropdown">
+            <div className="absolute left-0 right-0 top-full z-[10000] mt-2 overflow-hidden rounded-2xl border border-line bg-surf shadow-2xl cascade-dropdown">
               <div className="flex items-center justify-between border-b border-line px-4 py-2 text-[10px] font-bold uppercase tracking-wider text-mut">
                 <span>
                   {lang === "en" ? "Suggestions" : "সাজেশন"}
@@ -389,7 +387,8 @@ export default function Navbar() {
                     className="grid h-10 w-10 shrink-0 place-items-center rounded-lg text-xl"
                     style={{ background: p.bg }}
                   >
-                    {p.emoji}
+                    
+                    <img src={p.image} alt="" />
                   </span>
 
                   <span className="min-w-0 flex-1">
@@ -499,7 +498,6 @@ export default function Navbar() {
         </div>
       </div>
 
-
       {/* Desktop Navigation */}
       <nav className="hidden border-t border-line/70 lg:block">
 
@@ -529,16 +527,18 @@ export default function Navbar() {
               }}
               onFocus={openMegaMenu}
               aria-expanded={megaOpen}
-              className={`flex items-center gap-1.5 px-4 py-3 text-sm font-bold transition-colors ${megaOpen
+              className={`flex items-center gap-1.5 px-4 py-3 text-sm font-bold transition-colors ${
+                megaOpen
                   ? "text-brand"
                   : "text-ink/90 hover:text-brand"
-                }`}
+              }`}
             >
               {t.categories}
 
               <ChevronDown
-                className={`h-4 w-4 transition-transform duration-200 ${megaOpen ? "rotate-180" : ""
-                  }`}
+                className={`h-4 w-4 transition-transform duration-200 ${
+                  megaOpen ? "rotate-180" : ""
+                }`}
               />
             </button>
 
@@ -585,10 +585,11 @@ export default function Navbar() {
                             handleCategoryHover(category.id)
                           }
                           aria-expanded={isActive}
-                          className={`cascade-item flex w-full items-center justify-between gap-3 px-3.5 py-[9px] text-left text-[13px] ${isActive
+                          className={`cascade-item flex w-full items-center justify-between gap-3 px-3.5 py-[9px] text-left text-[13px] ${
+                            isActive
                               ? "bg-brand text-white"
                               : "text-ink hover:bg-bg hover:text-brand"
-                            }`}
+                          }`}
                         >
 
                           <span className="flex min-w-0 items-center gap-2.5">
@@ -606,10 +607,11 @@ export default function Navbar() {
                           </span>
 
                           <ChevronRight
-                            className={`h-4 w-4 shrink-0 ${isActive
+                            className={`h-4 w-4 shrink-0 ${
+                              isActive
                                 ? "text-white"
                                 : "text-mut"
-                              }`}
+                            }`}
                           />
 
                         </button>

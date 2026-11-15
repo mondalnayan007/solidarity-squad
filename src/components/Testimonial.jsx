@@ -82,7 +82,7 @@ export default function Testimonial() {
         >
           <div 
             ref={scrollRef}
-            className="flex snap-x snap-mandatory gap-8 overflow-x-auto pb-14 pt-14 pl-4 pr-12 scrollbar-hide"
+            className="flex snap-x snap-mandatory gap-8 overflow-x-auto py-8 pl-4 pr-12 scrollbar-hide"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {TESTIMONIALS.map((review) => (
