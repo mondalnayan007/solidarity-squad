@@ -36,6 +36,9 @@ export const BRANDS = [
   "Yonex", "Li-Ning", "Adidas", "Nike", "Puma", "Umbro", "Kalasagar", "BD Tigers", "Solidarity Squad",
 ];
 
+
+
+
 export const GRADES = ["Grade 1 · EW", "Grade 2 · EW", "Grade 3 · EW", "Grade 1 · MW", "Kashmir Willow", "Beginner"];
 
 const img = (emoji, c1, c2) => ({ emoji, bg: `linear-gradient(150deg, ${c1}, ${c2})` });
@@ -915,6 +918,226 @@ export const BLOG_POSTS = [
     "Hydrate in cycles between iftar and suhoor — small sips, not one litre at once.",
     "Keep intensity moderate: technique, mobility and light strength work. Save max-effort for after Eid.",
   ] },
+];
+
+// export const BLOG_POSTS =[
+//   {
+//     "id": "how-to-pick-cricket-bat",
+//     "tag": "Buying guide",
+//     "title": "How to pick the right cricket bat",
+//     "date": "2026-11-02",
+//     "read": "8 min",
+//     "author": "Solidarity Squad Team",
+//     "image": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&q=80&w=1200",
+//     "excerpt": "Willow grades, weight, pick-up and budget — plain words for your first English willow.",
+//     "body": [
+//       "Buying a cricket bat in Bangladesh is confusing: English willow, Kashmir willow, Grade 1, Grade 2... Here is the short version.",
+//       "Step 1 — Pick your willow. Kashmir willow is tough and affordable, ideal for nets and tape-ball. English willow has more fibre, better ping and needs more care. Grade 1 has the straightest grains; price rises with grain straightness.",
+//       "Step 2 — Weight and pick-up matter more than the sticker. A 2lb 7oz bat that picks up like 2lb 4oz will time the ball better than a heavier bat you drag to the crease.",
+//       "Step 3 — Knock it in. 4–6 hours of oiling and knocking before first use. We oil and press every bat before dispatch, but give it a light session yourself.",
+//       "Step 4 — Match the bat to the ball. Leather ball? English willow with a good toe. Tape-ball? Kashmir willow all day."
+//     ]
+//   },
+//   {
+//     "id": "home-gym-starter-plan",
+//     "tag": "Fitness",
+//     "title": "A 4-week home gym starter plan",
+//     "date": "2026-10-26",
+//     "read": "6 min",
+//     "author": "Solidarity Squad Team",
+//     "image": "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&q=80&w=1200",
+//     "excerpt": "Dumbbells, bands and a simple weekly schedule for absolute beginners.",
+//     "body": [
+//       "You do not need a membership to start. Two dumbbells, five bands and twenty minutes a day will change your body composition in a month.",
+//       "Weeks 1–2: full-body circuits, 2 sets of 12 reps, every other day. Squats, push-ups, rows, lunges, plank.",
+//       "Weeks 3–4: add one set, shorten rest to 45 seconds, and introduce band resistance for rows and presses.",
+//       "Rest and protein matter as much as the workout. Sleep 7+ hours and eat a palm-sized portion of protein each meal."
+//     ]
+//   },
+//   {
+//     "id": "jersey-care-tips",
+//     "tag": "Fan zone",
+//     "title": "Match-day jersey care tips",
+//     "date": "2026-10-18",
+//     "read": "4 min",
+//     "author": "Solidarity Squad Team",
+//     "image": "https://images.unsplash.com/photo-1577223625816-7546f13df25d?auto=format&fit=crop&q=80&w=1200",
+//     "excerpt": "Keep colours sharp and number prints intact after every wash.",
+//     "body": [
+//       "Turn the jersey inside out, cold water, mild detergent. Never bleach.",
+//       "Air-dry in shade — Dhaka sun fades sublimation prints faster than any detergent.",
+//       "Do not iron directly on the print. Iron inside out on low heat if needed.",
+//       "Frame it, don't fold it. Creases crack number vinyl over time."
+//     ]
+//   },
+//   {
+//     "id": "world-cup-2026-preview",
+//     "tag": "Campaign",
+//     "title": "World Cup 2026: kit preview & pre-order",
+//     "date": "2026-11-09",
+//     "read": "5 min",
+//     "author": "Solidarity Squad Team",
+//     "image": "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&q=80&w=1200",
+//     "excerpt": "Home, away and third kits — what to expect and how pre-order pricing works.",
+//     "body": [
+//       "The 2026 campaign brings the tricolor to life: home in flag green, away in crimson, third in gold accents.",
+//       "Pre-order before the campaign ends and get free name & number printing (worth ৳300) plus free delivery anywhere in Bangladesh.",
+//       "Quantities are limited per size. S, M and XL move fastest."
+//     ]
+//   },
+//   {
+//     "id": "football-boot-buying-guide",
+//     "tag": "Buying guide",
+//     "title": "FG vs AG vs TF boots — which for you?",
+//     "date": "2026-10-11",
+//     "read": "7 min",
+//     "author": "Solidarity Squad Team",
+//     "image": "https://images.unsplash.com/photo-1511886929837-354d827aae26?auto=format&fit=crop&q=80&w=1200",
+//     "excerpt": "Stop wearing FG studs on turf. Here is the honest breakdown.",
+//     "body": [
+//       "FG (firm ground) studs are for natural grass. On artificial turf they hurt your knees and slip.",
+//       "AG (artificial ground) studs are shorter and more numerous — the right pick for Dhaka's newer turf facilities.",
+//       "TF (turf) is for hard, dry, or carpet-like surfaces. Flat, many small studs.",
+//       "In doubt? TF boots work everywhere except monsoon-slick natural grass, where FG wins."
+//     ]
+//   },
+//   {
+//     "id": "ramadan-fitness-tips",
+//     "tag": "Fitness",
+//     "title": "Training during Ramadan — a coach's notes",
+//     "date": "2026-03-08",
+//     "read": "6 min",
+//     "author": "Solidarity Squad Team",
+//     "image": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=1200",
+//     "excerpt": "How to keep training while fasting: timing, hydration and intensity.",
+//     "body": [
+//       "Train 60–90 minutes before iftar, or after Taraweeh. Never in the midday heat.",
+//       "Hydrate in cycles between iftar and suhoor — small sips, not one litre at once.",
+//       "Keep intensity moderate: technique, mobility and light strength work. Save max-effort for after Eid."
+//     ]
+//   }
+// ]
+export const TESTIMONIALS = [
+  {
+    id: 1,
+    name: "Tanvir Ahmed",
+    location: "Dhaka, BD",
+    avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+    rating: 5,
+    text: "The delivery was incredibly fast! Got my parcel within 24 hours inside Dhaka. The packaging was top-notch."
+  },
+  {
+    id: 2,
+    name: "Sadia Rahman",
+    location: "Chittagong, BD",
+    avatar: "https://randomuser.me/api/portraits/women/44.jpg",
+    rating: 5,
+    text: "Product quality exceeded my expectations. The fabric is premium and exactly as shown in the picture. Highly recommended!"
+  },
+  {
+    id: 3,
+    name: "Farhan Hossain",
+    location: "Sylhet, BD",
+    avatar: "https://randomuser.me/api/portraits/men/45.jpg",
+    rating: 4,
+    text: "Customer support is very helpful. I needed to exchange a size, and they handled it smoothly without any hassle."
+  },
+  {
+    id: 4,
+    name: "Nusrat Jahan",
+    location: "Rajshahi, BD",
+    avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+    rating: 5,
+    text: "Best online shopping experience in BD so far. Genuine products and very transparent tracking system."
+  },
+  {
+    id: 5,
+    name: "Mahmudul Hasan",
+    location: "Khulna, BD",
+    avatar: "https://randomuser.me/api/portraits/men/22.jpg",
+    rating: 5,
+    text: "I was skeptical at first, but the quality of the jersey is 100% authentic. Will definitely buy again for the next tournament."
+  },
+  {
+    id: 6,
+    name: "Jannatul Ferdous",
+    location: "Comilla, BD",
+    avatar: "https://randomuser.me/api/portraits/women/12.jpg",
+    rating: 5,
+    text: "Gifted this to my brother and he loved it! The material is very comfortable for daily wear."
+  },
+  {
+    id: 7,
+    name: "Rakib Uddin",
+    location: "Barisal, BD",
+    avatar: "https://randomuser.me/api/portraits/men/55.jpg",
+    rating: 4,
+    text: "Delivery took 3 days outside Dhaka, which is standard. Overall, the product and service are excellent."
+  },
+  {
+    id: 8,
+    name: "Samiya Islam",
+    location: "Dhaka, BD",
+    avatar: "https://randomuser.me/api/portraits/women/33.jpg",
+    rating: 5,
+    text: "Such a premium feel! The combo pack is totally value for money. Thanks for the amazing service."
+  },
+  {
+    id: 9,
+    name: "Asif Akbar",
+    location: "Mymensingh, BD",
+    avatar: "https://randomuser.me/api/portraits/men/85.jpg",
+    rating: 5,
+    text: "Very professional packaging and the delivery man was well-behaved. I'm a permanent customer from now on."
+  },
+  {
+    id: 10,
+    name: "Tanjina Akter",
+    location: "Bogra, BD",
+    avatar: "https://randomuser.me/api/portraits/women/24.jpg",
+    rating: 5,
+    text: "I bought the fan edition kit. The stitching and finishing are flawless. Perfect for match days!"
+  },
+  {
+    id: 11,
+    name: "Kamrul Islam",
+    location: "Rangpur, BD",
+    avatar: "https://randomuser.me/api/portraits/men/19.jpg",
+    rating: 4,
+    text: "Prices are very reasonable compared to the market. Good to see a trusted local brand providing such quality."
+  },
+  {
+    id: 12,
+    name: "Mim Akhter",
+    location: "Dhaka, BD",
+    avatar: "https://randomuser.me/api/portraits/women/19.jpg",
+    rating: 5,
+    text: "Their return policy is actually functional! Returned a defective item and got a replacement within 2 days."
+  },
+  {
+    id: 13,
+    name: "Sajjad Hossain",
+    location: "Narayanganj, BD",
+    avatar: "https://randomuser.me/api/portraits/men/39.jpg",
+    rating: 5,
+    text: "10/10 for the quick response on the Facebook page. They guided me perfectly regarding the size chart."
+  },
+  {
+    id: 14,
+    name: "Afsana Mimi",
+    location: "Gazipur, BD",
+    avatar: "https://randomuser.me/api/portraits/women/51.jpg",
+    rating: 5,
+    text: "Loved the winter collection. It's warm, cozy, and looks very stylish. Delivery was faster than expected."
+  },
+  {
+    id: 15,
+    name: "Imran Hossen",
+    location: "Cox's Bazar, BD",
+    avatar: "https://randomuser.me/api/portraits/men/71.jpg",
+    rating: 4,
+    text: "The print quality on the t-shirts is solid. Hasn't faded even after multiple washes. Good job team!"
+  }
 ];
 
 export const REVIEWS_POOL = [

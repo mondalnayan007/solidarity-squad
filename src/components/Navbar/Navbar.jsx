@@ -211,7 +211,7 @@ export default function Navbar() {
     "px-4 py-3 text-sm font-bold text-ink/90 transition-colors hover:text-brand";
 
   return (
-    <header className="no-print sticky top-0 z-50 w-full border-b border-line/80 bg-surf/95 backdrop-blur-xl">
+    <header className="no-print sticky top-0 z-50 w-full max-w-full overflow-x-clip border-b border-line/80 bg-surf/95 backdrop-blur-xl">
 
       {/* Animations */}
       <style>{`
@@ -299,21 +299,24 @@ export default function Navbar() {
         </div>
       </div>
 
+
+
       {/* Main Navbar */}
-      <div className="mx-auto flex max-w-7xl items-center gap-3 px-4 py-2.5 lg:gap-5 lg:px-8">
+      <div className="mx-auto flex w-full max-w-7xl min-w-0 items-center gap-2 overflow-hidden px-3 py-2.5 sm:gap-3 sm:px-4 lg:gap-5 lg:px-8">
 
         {/* Logo */}
         <Link
           to="/"
-          className="group flex shrink-0 items-center gap-2.5"
+          className="group flex min-w-0 shrink items-center gap-2"
           aria-label="Solidarity Squad home"
         >
-          <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br from-brand via-emerald-600 to-accent text-white shadow-lg transition-transform group-hover:scale-105">
+          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-brand via-emerald-600 to-accent text-white shadow-lg transition-transform group-hover:scale-105 sm:h-10 sm:w-10 sm:rounded-2xl">
             <Trophy className="h-5 w-5" />
           </div>
 
-          <div className="leading-none">
-            <div className="font-display text-[22px] font-extrabold tracking-tight text-ink">
+          {/* Hide brand text on small screens */}
+          <div className="hidden min-w-0 leading-none sm:block">
+            <div className="whitespace-nowrap font-display text-[18px] font-extrabold tracking-tight text-ink lg:text-[22px]">
               SOLIDARITY{" "}
               <span className="text-brand dark:text-emerald-400">
                 SQUAD
@@ -329,10 +332,9 @@ export default function Navbar() {
         {/* Desktop Search */}
         <div
           ref={searchRef}
-          className="relative mx-auto hidden w-full max-w-xl md:block"
+          className="relative mx-auto hidden w-full max-w-xl min-w-0 md:block"
         >
           <form onSubmit={submitSearch} role="search">
-
             <Search className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-mut" />
 
             <input
@@ -353,15 +355,12 @@ export default function Navbar() {
             >
               {lang === "en" ? "Search" : "খুঁজুন"}
             </button>
-
           </form>
 
           {/* Search Suggestions */}
           {focus && suggestions.length > 0 && (
             <div className="absolute left-0 right-0 top-full z-50 mt-2 overflow-hidden rounded-2xl border border-line bg-surf shadow-2xl cascade-dropdown">
-
               <div className="flex items-center justify-between border-b border-line px-4 py-2 text-[10px] font-bold uppercase tracking-wider text-mut">
-
                 <span>
                   {lang === "en" ? "Suggestions" : "সাজেশন"}
                 </span>
@@ -373,7 +372,6 @@ export default function Navbar() {
                 >
                   {lang === "en" ? "See all" : "সব দেখুন"}
                 </button>
-
               </div>
 
               {suggestions.map((p) => (
@@ -387,7 +385,6 @@ export default function Navbar() {
                   }}
                   className="flex w-full items-center gap-3 px-4 py-2 text-left hover:bg-bg"
                 >
-
                   <span
                     className="grid h-10 w-10 shrink-0 place-items-center rounded-lg text-xl"
                     style={{ background: p.bg }}
@@ -399,7 +396,6 @@ export default function Navbar() {
                     <span className="block truncate text-sm font-semibold text-ink">
                       {p.name}
                     </span>
-
                     <span className="block text-[11px] text-mut">
                       {p.brand} · {p.sub}
                     </span>
@@ -408,32 +404,35 @@ export default function Navbar() {
                   <span className="text-sm font-bold text-brand">
                     {formatBDT(p.price)}
                   </span>
-
                 </button>
               ))}
-
             </div>
           )}
         </div>
 
         {/* Right Controls */}
-        <div className="flex shrink-0 items-center gap-1.5">
+        <div className="ml-auto flex shrink-0 items-center gap-1 sm:gap-1.5">
 
           {/* Language */}
           <button
             onClick={toggleLang}
             title="Switch language"
-            className="flex h-10 items-center gap-1.5 rounded-xl border border-line bg-bg px-3 text-xs font-extrabold text-ink hover:border-brand"
+            className="flex h-9 shrink-0 items-center justify-center rounded-lg border border-line bg-bg px-2 text-[10px] font-extrabold text-ink hover:border-brand sm:h-10 sm:gap-1.5 sm:rounded-xl sm:px-3 sm:text-xs"
           >
             <span className="h-2 w-2 rounded-full bg-good" />
-            {lang === "en" ? "বাংলা" : "EN"}
+            <span className="sm:hidden">
+              {lang === "en" ? "BN" : "EN"}
+            </span>
+            <span className="hidden sm:inline">
+              {lang === "en" ? "বাংলা" : "EN"}
+            </span>
           </button>
 
           {/* Dark Mode */}
           <button
             onClick={toggleDark}
             aria-label="Toggle dark mode"
-            className="flex h-10 w-10 items-center justify-center rounded-xl border border-line bg-bg text-ink hover:border-brand"
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-line bg-bg text-ink hover:border-brand sm:h-10 sm:w-10 sm:rounded-xl"
           >
             {dark ? (
               <Sun className="h-4 w-4 text-gold" />
@@ -446,12 +445,12 @@ export default function Navbar() {
           <Link
             to="/wishlist"
             aria-label="Wishlist"
-            className="relative flex h-10 w-10 items-center justify-center rounded-xl border border-line bg-bg text-ink hover:border-brand"
+            className="relative flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-line bg-bg text-ink hover:border-brand sm:h-10 sm:w-10 sm:rounded-xl"
           >
-            <Heart className="h-5 w-5" />
+            <Heart className="h-4 w-4 sm:h-5 sm:w-5" />
 
             {wishlist.length > 0 && (
-              <span className="absolute -right-1 -top-1 grid h-5 w-5 place-items-center rounded-full bg-accent text-[10px] font-bold text-white">
+              <span className="absolute -right-1 -top-1 grid h-4 w-4 place-items-center rounded-full bg-accent text-[9px] font-bold text-white sm:h-5 sm:w-5 sm:text-[10px]">
                 {wishlist.length}
               </span>
             )}
@@ -461,7 +460,7 @@ export default function Navbar() {
           <Link
             to={user ? "/account" : "/login"}
             aria-label="Account"
-            className="hidden h-10 w-10 items-center justify-center rounded-xl border border-line bg-bg text-ink hover:border-brand sm:flex"
+            className="hidden h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-line bg-bg text-ink hover:border-brand sm:flex"
           >
             <User className="h-5 w-5" />
           </Link>
@@ -470,33 +469,36 @@ export default function Navbar() {
           <button
             onClick={() => setCartOpen(true)}
             aria-label="Open cart"
-            className="relative flex h-10 items-center gap-2 rounded-xl bg-ink px-3 text-sm font-bold text-bg hover:opacity-90 dark:bg-gold dark:text-[#1a1a1a]"
+            className="relative flex h-9 shrink-0 items-center justify-center gap-1.5 rounded-lg bg-ink px-2 text-sm font-bold text-bg hover:opacity-90 dark:bg-gold dark:text-[#1a1a1a] sm:h-10 sm:gap-2 sm:rounded-xl sm:px-3"
           >
-            <ShoppingBag className="h-5 w-5" />
+            <ShoppingBag className="h-4 w-4 sm:h-5 sm:w-5" />
 
-            <span className="hidden sm:inline">{t.cart}</span>
+            <span className="hidden sm:inline">
+              {t.cart}
+            </span>
 
-            <span className="grid h-5 w-6 place-items-center rounded-md bg-white/25 text-[11px] font-extrabold dark:bg-black/15">
+            <span className="grid h-5 min-w-5 place-items-center rounded-md bg-white/25 px-1 text-[10px] font-extrabold dark:bg-black/15">
               {cartCount}
             </span>
           </button>
 
-          {/* Mobile Menu */}
+          {/* Hamburger */}
           <button
             onClick={() => setMobileOpen((v) => !v)}
             aria-label="Toggle menu"
             aria-expanded={mobileOpen}
-            className="flex h-10 w-10 items-center justify-center rounded-xl border border-line text-ink lg:hidden"
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-line text-ink hover:border-brand sm:h-10 sm:w-10 sm:rounded-xl lg:hidden"
           >
             {mobileOpen ? (
-              <X className="h-6 w-6" />
+              <X className="h-5 w-5" />
             ) : (
-              <Menu className="h-6 w-6" />
+              <Menu className="h-5 w-5" />
             )}
           </button>
 
         </div>
       </div>
+
 
       {/* Desktop Navigation */}
       <nav className="hidden border-t border-line/70 lg:block">
@@ -527,18 +529,16 @@ export default function Navbar() {
               }}
               onFocus={openMegaMenu}
               aria-expanded={megaOpen}
-              className={`flex items-center gap-1.5 px-4 py-3 text-sm font-bold transition-colors ${
-                megaOpen
+              className={`flex items-center gap-1.5 px-4 py-3 text-sm font-bold transition-colors ${megaOpen
                   ? "text-brand"
                   : "text-ink/90 hover:text-brand"
-              }`}
+                }`}
             >
               {t.categories}
 
               <ChevronDown
-                className={`h-4 w-4 transition-transform duration-200 ${
-                  megaOpen ? "rotate-180" : ""
-                }`}
+                className={`h-4 w-4 transition-transform duration-200 ${megaOpen ? "rotate-180" : ""
+                  }`}
               />
             </button>
 
@@ -585,11 +585,10 @@ export default function Navbar() {
                             handleCategoryHover(category.id)
                           }
                           aria-expanded={isActive}
-                          className={`cascade-item flex w-full items-center justify-between gap-3 px-3.5 py-[9px] text-left text-[13px] ${
-                            isActive
+                          className={`cascade-item flex w-full items-center justify-between gap-3 px-3.5 py-[9px] text-left text-[13px] ${isActive
                               ? "bg-brand text-white"
                               : "text-ink hover:bg-bg hover:text-brand"
-                          }`}
+                            }`}
                         >
 
                           <span className="flex min-w-0 items-center gap-2.5">
@@ -607,11 +606,10 @@ export default function Navbar() {
                           </span>
 
                           <ChevronRight
-                            className={`h-4 w-4 shrink-0 ${
-                              isActive
+                            className={`h-4 w-4 shrink-0 ${isActive
                                 ? "text-white"
                                 : "text-mut"
-                            }`}
+                              }`}
                           />
 
                         </button>

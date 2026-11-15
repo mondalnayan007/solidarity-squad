@@ -10,6 +10,7 @@ import HeroSlider from "../components/HeroSlider";
 import FeatureBanner from "../components/FeatureBanner";
 import ShopBySport from "../components/ShopBySport";
 import FlashSaleBanner from "../components/FlashSaleBanner";
+import Testimonial from "../components/Testimonial";
 
 export default function Home() {
   const [tab, setTab] = useState("best");
@@ -197,27 +198,9 @@ export default function Home() {
         <FlashSaleBanner></FlashSaleBanner>
   
 
-      {/* ═══ From the blog ═══ */}
-      <section className="mx-auto mt-10 max-w-7xl px-4 lg:px-8">
-        <div className="mb-3 flex items-end justify-between">
-          <h2 className="font-display text-3xl font-extrabold leading-none">From the <span className="text-accent">blog</span></h2>
-          <Link to="/blog" className="flex items-center gap-1 text-xs font-extrabold text-brand hover:gap-2 transition-all">All articles <ArrowRight className="h-4 w-4" /></Link>
-        </div>
-        <div className="grid gap-4 sm:grid-cols-3">
-          {[
-            { slug: "how-to-pick-cricket-bat", tag: "Buying guide", title: "How to pick the right cricket bat", excerpt: "Willow grades, weight and pick-up explained in plain words." },
-            { slug: "home-gym-starter-plan", tag: "Fitness", title: "A 4-week home gym starter plan", excerpt: "Dumbbells, bands and a simple weekly schedule for beginners." },
-            { slug: "world-cup-2026-preview", tag: "Campaign", title: "World Cup 2026: kit preview", excerpt: "Home, away and third kits — and how pre-order pricing works." },
-          ].map((post) => (
-            <Link key={post.slug} to={`/blog/${post.slug}`} className="card-surface group p-5 transition hover:-translate-y-1 hover:shadow-lg">
-              <span className="text-[10px] font-extrabold uppercase tracking-widest text-accent">{post.tag}</span>
-              <h3 className="mt-1.5 text-base font-extrabold leading-snug group-hover:text-brand">{post.title}</h3>
-              <p className="mt-1.5 line-clamp-2 text-xs text-mut">{post.excerpt}</p>
-              <span className="mt-3 flex items-center gap-1 text-[11px] font-extrabold text-brand">Read article <ArrowRight className="h-3.5 w-3.5" /></span>
-            </Link>
-          ))}
-        </div>
-      </section>
+
+     <Testimonial></Testimonial>
+      
 
       {/* ═══ Payment & delivery partners ═══ */}
       <div className="mx-auto mt-10 max-w-7xl px-4 pb-4 lg:px-8">
